@@ -6,7 +6,7 @@
     --navbar-transition-speed: .2s;
     --navbar-item-hovered-color: #dadada;
     --primary-color: #616161;
-    --background-color: #2c2c2c; 
+    --background-color: #00000000; 
     --navbar-logo-background-color: #979797;
 }
 
@@ -15,7 +15,6 @@ html, body{
     font-family:'Oswald';
     font-size: 16px;
     background-color: var(--background-color);
-    background: url(./assets/background.png);
 }
 
 main{
@@ -103,4 +102,16 @@ main{
 
 .navbar:hover .logo .navbar-icon{
     transform: rotate(180deg);
+}
+
+#background-video{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
