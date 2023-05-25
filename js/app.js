@@ -11,6 +11,6 @@ window.addEventListener("mousemove", (e) => {
         let speedx = el.dataset.speedx;
         let speedy = el.dataset.speedy;
         console.log(xValue, yValue);
-        el.style.transform = `translateX(calc(-50% + ${-xValue * speedx}px)) translateY(calc(-50% + ${yValue * speedy}px))`;
+        el.style.transform = `translateX(calc(-50% + ${-xValue * speedx}px)) translateY(calc(-50% + ${-yValue * speedy}px))`;
     });
 });
