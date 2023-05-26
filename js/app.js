@@ -29,3 +29,16 @@ window.addEventListener("mousemove", (e) => {
 
     
 });
+
+let timeline = gsap.timeline();
+
+Array.from(parallax_el).filter(el => !(el.classList.contains("text") || el.classList.contains("Background"))).forEach((el) => {
+    timeline.from(
+        el, 
+        {
+            top: `${el.offsetHeight - 200}px`,
+            duration: 1,
+        },
+        "1"
+    );
+});
