@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@100;300;400;800&display=swap');
+
+@keyframes SlideInUp {
+    from{
+        transform: translateY(200%);
+    }
+    to{
+        transform: translateY(3.5%);
+    }
+}
+
+@keyframes FadeIn {
+    from{
+        filter: opacity(0%);
+    }
+    to{
+        filter: opacity(100%);
+    }
+}
+
+@keyframes SlideInDown {
+    from{
+        transform: translateY(-80px);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes SlideInDownOutUp {
+    from{
+        transform: translateY(-400%);
+        color: rgba(255, 255, 255, 0);
+    }
+
+    60%{
+        transform: translateY(0%);
+        color: rgb(255, 255, 255);
+    }
+
+    to{
+        transform: translateY(-400%);
+        color: rgba(255, 255, 255, 0);
+    }
+}
+
+
+*, *::before, *::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+ background-color: rgba(0, 255, 234, 0.37);
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+}
+
+.logo{
+    height: 60px;
+    margin-right: 10vw;
+    user-select: none;
+}
+
+header{
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    padding: 0.2rem 0;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.02);
+    display: flex;
+    height: 7%;
+
+    animation: SlideInDown 0.5s 2s backwards;
+}
+
+header nav{
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    transform: translateX(-11vw);
+
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul a{
+    text-decoration: none;
+    color: white;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.2rem;
+    box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.56);
+    transition: border-top-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+
+header ul a:hover {
+  color: #ffffff;
+  box-shadow: inset 200px 0 0 0 rgba(255, 255, 255, 0.25);
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.main_content {
+    display: grid;
+    width: 100%;
+    height: 93%;
+    gap: 50px;
+
+    z-index: 999;
+    place-items: center;
+}
+
+.presentation{
+    background-color: rgba(255, 255, 255, 0.13);
+    width: 80%;
+    height: 80%;
+    z-index: 999;
+    display: flex;
+    margin: 50px;
+
+    animation-name: SlideInUp;
+    animation-duration: 1s;
+    animation-delay: 1.7s;
+    animation-fill-mode: backwards;
+}
+
+.resume{
+    display: grid;
+    place-items: center;
+    color: white;
+    grid-template-rows: 2fr 1fr 1fr;
+}
+
+.head{
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.photo{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.contact{
+    display: grid;
+    place-items: center;
+    row-gap: 20px;
+    font-size: 1.1rem;
+}
+
+.contact i{
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+.liens i{
+    font-size: 2.3rem;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-width: 0;
+    color: #ffffff;
+    cursor: pointer;
+    padding: .7em 1em;
+    position: relative;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+}
+
+button:before {
+    background-color: rgba(255, 255, 255, 0.21);
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+button:hover:before {
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.content{
+    margin: 5%;
+    align-items: center;
+}
+
+.content h2{
+    color: white;
+    font-weight: 600;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+
+}
+
+.content h3{
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: justify;
+}
+
+.parallax{
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(.2, .49, .32, .99);
+    user-select: none;
+}
+
+.Background{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+.Cube_01{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 15;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cube_02{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 11;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cube_03{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 7;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cube_04{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 13;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cube_05{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 3;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cube_06{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 9;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cylinder_01{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 17;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cylinder_02{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 6;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Cylinder_03{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 4;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Pyramid_01{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 10;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Pyramid_02{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 14;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Pyramid_03{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 5;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Sphere_01{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 16;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Sphere_02{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 8;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.Sphere_03{
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    left: calc(50%);
+    z-index: 2;
+
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+}
+
+.text{
+    position: absolute;
+    z-index: 12;
+    top: calc(50% - 10px);
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+
+
+}
+
+h1{
+    font-weight: 500;
+    font-size: 12rem;
+    font-style: italic;
+
+    animation: SlideInDownOutUp 3s both;
+}
+
+@media (max-width: 1100px){
+    .text h1{
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 725px){
+    .text h1{
+        font-size: 5rem;
+    }
+}

@@ -2,7 +2,7 @@
 
 @keyframes SlideInUp {
     from{
-        transform: translateY(200%);
+        transform: translateY(700%);
     }
     to{
         transform: translateY(3.5%);
@@ -55,6 +55,22 @@
  background-color: rgba(0, 255, 234, 0.37);
 }
 
+::-webkit-scrollbar {
+width: 6px;
+height: 6px;
+}
+::-webkit-scrollbar-track {
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.25);
+}
+::-webkit-scrollbar-thumb{
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.7);
+}
+::-webkit-scrollbar-thumb:hover{
+background: rgba(201, 201, 201, 0.7);
+}
+
 body{
     font-family: "Poppins", sans-serif;
     background-color: black;
@@ -62,7 +78,7 @@ body{
 
 .logo{
     height: 60px;
-    margin-right: 7vw;
+    margin-right: 10vw;
     user-select: none;
 }
 
@@ -78,7 +94,7 @@ header{
     display: flex;
     height: 7%;
 
-    animation: SlideInDown 0.5s 2s backwards;
+    animation: SlideInDown 0.5s 1s backwards;
 }
 
 header nav{
@@ -104,14 +120,14 @@ header ul a{
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1.2rem;
-    box-shadow: inset 0 0 0 0 #ffffff;
+    box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.56);
     transition: border-top-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 
 header ul a:hover {
-  color: #000000;
-  box-shadow: inset 200px 0 0 0 #ffffff;;
+  color: #ffffff;
+  box-shadow: inset 200px 0 0 0 rgba(255, 255, 255, 0.25);
 }
 
 main{
@@ -121,62 +137,93 @@ main{
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+}
+
+.main_content {
+    overflow: auto;
+    display: grid;
+    width: 100%;
+    height: 93%;
+    gap: 50px;
+
+    z-index: 999;
+    place-items: center;
 }
 
 .presentation{
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.13);
     width: 80%;
     height: 80%;
-    transform: translateY(3.5%);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    margin: 50px;
 
     animation-name: SlideInUp;
     animation-duration: 1s;
-    animation-delay: 2.5s;
+    animation-delay: 1.1s;
     animation-fill-mode: backwards;
 }
 
 .resume{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    gap: 10px;
 }
 
 .photo{
-    width: 55%;
+    width: 150px;
 }
 
-button{
-    width: 70%;
-    height: 70%;
+.content{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 2%;
 }
 
-.contenu{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-.contenu h2{
+.content h2{
     color: white;
     font-weight: 600;
     font-size: 2.5rem;
     display: flex;
     justify-content: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
-
 }
 
-.contenu h3{
+.content h3{
     color: white;
     font-weight: 400;
     font-size: 1.2rem;
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
+.summary{
+    color: #c9c8c8;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 0.5fr 5fr 0.5fr 1.5fr 0.5fr 1.5fr 0.5fr 4fr;
+    margin: 5px;
+    gap: 3px;
+}
+
+.summary h4{
+    font-weight: 300;
+    font-size: 1.1rem;
+    font-style: italic;
+    place-self: center;
+    justify-self: start;
+}
+
+
+.summary i{
+    font-size: 1.6rem;
+    place-self: center;
+}
+
+/* BACKGROUND */
 
 .parallax{
     pointer-events: none;
@@ -404,8 +451,10 @@ h1{
     font-size: 12rem;
     font-style: italic;
 
-    animation: SlideInDownOutUp 4s both;
+    animation: SlideInDownOutUp 2s both;
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 1100px){
     .text h1{
