@@ -146,12 +146,11 @@ main{
     width: 100%;
     height: 93%;
     gap: 50px;
-
     z-index: 999;
     place-items: center;
 }
 
-.presentation{
+.frame{
     background-color: rgba(255, 255, 255, 0.13);
     width: 80%;
     height: 80%;
@@ -162,6 +161,10 @@ main{
     animation-duration: 1s;
     animation-delay: 1.1s;
     animation-fill-mode: backwards;
+}
+
+.frame:hover{
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.25);
 }
 
 .resume{
@@ -204,9 +207,16 @@ main{
     color: #c9c8c8;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 0.5fr 5fr 0.5fr 1.5fr 0.5fr 1.5fr 0.5fr 4fr;
     margin: 5px;
     gap: 3px;
+}
+
+.education_summary{
+grid-template-columns: 0.5fr 1.5fr 0.5fr 1fr 0.5fr 1.5fr;
+}
+
+.experiences_summary{
+    grid-template-columns: 0.5fr 5fr 0.5fr 1.5fr 0.5fr 1.5fr 0.5fr 4fr;
 }
 
 .summary h4{

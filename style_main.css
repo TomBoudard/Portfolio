@@ -134,7 +134,7 @@ main{
     place-items: center;
 }
 
-.presentation{
+.frame{
     background-color: rgba(255, 255, 255, 0.13);
     width: 80%;
     height: 80%;
@@ -231,7 +231,7 @@ button:hover:before {
 .content h3{
     color: white;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-top: 2%;
     margin-bottom: 2%;
     text-align: justify;
