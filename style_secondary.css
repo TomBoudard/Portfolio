@@ -5,7 +5,7 @@
         transform: translateY(700%);
     }
     to{
-        transform: translateY(3.5%);
+        transform: translateY(0%);
     }
 }
 
@@ -156,6 +156,7 @@ main{
     height: 80%;
     display: flex;
     margin: 50px;
+    border-radius: 10px;
 
     animation-name: SlideInUp;
     animation-duration: 1s;
@@ -217,6 +218,10 @@ grid-template-columns: 0.5fr 1.5fr 0.5fr 1fr 0.5fr 1.5fr;
 
 .experiences_summary{
     grid-template-columns: 0.5fr 5fr 0.5fr 1.5fr 0.5fr 1.5fr 0.5fr 4fr;
+}
+
+.projects_summary{
+    grid-template-columns: 0.5fr 2fr 0.5fr 2fr 0.5fr 2fr;
 }
 
 .summary h4{

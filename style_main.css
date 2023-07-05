@@ -5,7 +5,7 @@
         transform: translateY(200%);
     }
     to{
-        transform: translateY(3.5%);
+        transform: translateY(0%);
     }
 }
 
@@ -141,6 +141,7 @@ main{
     z-index: 999;
     display: flex;
     margin: 50px;
+    border-radius: 10px;
 
     animation-name: SlideInUp;
     animation-duration: 1s;
