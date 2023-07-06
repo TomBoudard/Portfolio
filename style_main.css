@@ -471,10 +471,22 @@ h1{
     .text h1{
         font-size: 8rem;
     }
+    .logo{
+        height: 0px;
+    }
+    .navbar span{
+        font-size: 0rem;
+    }
 }
 
 @media (max-width: 725px){
     .text h1{
         font-size: 5rem;
+    }
+    .logo{
+        height: 0px;
+    }
+    .navbar span{
+        font-size: 0rem;
     }
 }
