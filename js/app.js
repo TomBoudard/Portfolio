@@ -1,5 +1,7 @@
 const parallax_el = document.querySelectorAll(".parallax");
 
+var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+
 let xValue = 0, yValue = 0;
 let rotateDegree = 0;
 
@@ -22,13 +24,25 @@ update(0);
 update(0);
 update(0);
 
-window.addEventListener("mousemove", (e) => {
-    xValue = e.clientX - window.innerWidth / 2 ;
-    yValue = e.clientY - window.innerHeight / 2;
+
+if(isMobile){
+    let gyroscope = new Gyroscope();
+
+    xValue = gyroscope.x ;
+    yValue = gyroscope.y;
 
     rotateDegree = (xValue / (window.innerWidth / 2)) * 20;
 
-    update(e.clientX);
+    update(gyroscope.x);
+}
+else{
+    window.addEventListener("mousemove", (e) => {
 
-    
-});
+        xValue = e.clientX - window.innerWidth / 2 ;
+        yValue = e.clientY - window.innerHeight / 2;
+
+        rotateDegree = (xValue / (window.innerWidth / 2)) * 20;
+
+        update(e.clientX);
+    });
+}
