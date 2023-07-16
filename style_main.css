@@ -282,7 +282,7 @@ button:hover:before {
     width: 100%;
     top: calc(50%);
     left: calc(50%);
-    z-index: 11;
+    z-index: 10;
 
     animation-name: FadeIn;
     animation-duration: 1s;
@@ -386,7 +386,7 @@ button:hover:before {
     width: 100%;
     top: calc(50%);
     left: calc(50%);
-    z-index: 10;
+    z-index: 11;
 
     animation-name: FadeIn;
     animation-duration: 1s;
@@ -461,7 +461,7 @@ button:hover:before {
 
 .text{
     position: absolute;
-    z-index: 12;
+    z-index: 11;
     top: calc(50% - 10px);
     left: 50%;
     text-align: center;
@@ -481,12 +481,6 @@ h1{
 
 /*RESPONSIVE*/
 
-@media (max-width: 1920px) {
-    .Background{
-        display: none;
-    }
-}
-
 @media (max-width: 1200px){
     body{
         background-image: url("assets/1080p/Complete.png");
@@ -494,11 +488,14 @@ h1{
         background-position: center;
         background-size: cover;
     }
+    .parallax{
+        display: none;
+    }
     .text h1{
         font-size: 4rem;
     }
-    .parallax{
-        display: none;
+    .text{
+        display: block;
     }
     header{
         display: grid;
