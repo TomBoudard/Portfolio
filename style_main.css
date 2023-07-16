@@ -488,14 +488,24 @@ h1{
 }
 
 @media (max-width: 1200px){
+    body{
+        background-image: url("assets/1080p/Complete.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
     .text h1{
         font-size: 4rem;
+    }
+    .parallax{
+        display: none;
     }
     header{
         display: grid;
         grid-template-rows: 1fr 1.8fr;
         grid-template-columns: 1fr;
         height: 9%;
+        min-height: max-content;
         place-items: center;
         background-color: rgba(255, 255, 255, 0.02);
     }
@@ -510,7 +520,7 @@ h1{
         display: none;
     }
     ul li a i{
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     ul li a{
         padding: 0;
