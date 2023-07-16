@@ -25,17 +25,7 @@ update(0);
 update(0);
 
 
-if(isMobile){
-    let gyroscope = new Gyroscope();
-
-    xValue = gyroscope.x ;
-    yValue = gyroscope.y;
-
-    rotateDegree = (xValue / (window.innerWidth / 2)) * 20;
-
-    update(gyroscope.x);
-}
-else{
+if(!isMobile){
     window.addEventListener("mousemove", (e) => {
 
         xValue = e.clientX - window.innerWidth / 2 ;

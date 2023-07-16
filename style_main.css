@@ -20,7 +20,7 @@
 
 @keyframes SlideInDown {
     from{
-        transform: translateY(-80px);
+        transform: translateY(-100px);
     }
     to{
         transform: translateY(0%);
@@ -55,6 +55,22 @@
  background-color: rgba(0, 255, 234, 0.37);
 }
 
+::-webkit-scrollbar {
+width: 6px;
+height: 6px;
+}
+::-webkit-scrollbar-track {
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.25);
+}
+::-webkit-scrollbar-thumb{
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.7);
+}
+::-webkit-scrollbar-thumb:hover{
+background: rgba(201, 201, 201, 0.7);
+}
+
 body{
     font-family: "Poppins", sans-serif;
     background-color: black;
@@ -66,9 +82,6 @@ header{
     z-index: 99999;
     width: 100%;
     height: 7%;
-    /*padding: 0.2rem 0;*/
-    /*top: 0;*/
-    /*left: 0;*/
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.02);
     display: flex;
@@ -117,23 +130,26 @@ main{
 }
 
 .main_content {
+    overflow: auto;
     display: grid;
     width: 100%;
     height: 93%;
-    gap: 50px;
-
     z-index: 999;
     place-items: center;
+    text-align: center;
 }
 
 .frame{
     background-color: rgba(255, 255, 255, 0.13);
     width: 80%;
     height: 80%;
-    z-index: 999;
-    display: flex;
-    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
     border-radius: 10px;
+    gap: 10px;
+    padding: 10px;
+    margin: 40px;
 
     animation-name: SlideInUp;
     animation-duration: 1s;
@@ -156,9 +172,15 @@ main{
     text-align: center;
 }
 
+.head span{
+    padding: 10px;
+}
+
 .photo{
-    width: 50%;
-    margin-bottom: 20px;
+    width: 70%;
+    max-width: 400px;
+    place-items: center;
+    padding: 10px;
 }
 
 .contact{
@@ -166,8 +188,6 @@ main{
     place-items: center;
     row-gap: 20px;
     font-size: 1.1rem;
-    word-wrap: break-word;
-    text-overflow: ellipsis;
 }
 
 .contact i{
@@ -209,26 +229,24 @@ button:hover:before {
 }
 
 .content{
-    margin: 5%;
     align-items: center;
 }
 
 .content h2{
     color: white;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 3rem;
     display: flex;
     justify-content: center;
-    margin-bottom: 2%;
+    padding: 2%;
 
 }
 
 .content h3{
     color: white;
     font-weight: 400;
-    font-size: 1.15rem;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    font-size: 1.2rem;
+    padding: 1%;
     text-align: justify;
 }
 
@@ -236,7 +254,7 @@ button:hover:before {
     pointer-events: none;
     transition: 0.45s cubic-bezier(.2, .49, .32, .99);
     user-select: none;
-    min-width: 1020px;
+    min-width: 1000px;
 }
 
 .Background{
@@ -462,20 +480,37 @@ h1{
     animation: SlideInDownOutUp 3s both;
 }
 
+/*RESPONSIVE*/
 
+@media (max-width: 1920px) {
+    .Background{
+        display: none;
+    }
+}
 
 @media (max-width: 1200px){
     .text h1{
-        font-size: 5rem;
+        font-size: 4rem;
+    }
+    header{
+        display: grid;
+        grid-template-rows: 1fr 1.8fr;
+        grid-template-columns: 1fr;
+        height: 9%;
+        place-items: center;
+        background-color: rgba(255, 255, 255, 0.02);
     }
     .logo{
-        display: none;
+        height: 35px;
+    }
+    .main_content{
+        height: 91%;
     }
     ul li a span{
         display: none;
     }
     ul li a i{
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
     ul li a{
         padding: 0;
@@ -489,8 +524,16 @@ h1{
         align-items: center;
         justify-items: center;
     }
-    .portfolio{
-        width: 1920px;
+    .frame{
+        width: 90%;
+        height: 98%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
     }
-
+    .content h2{
+        font-size: 2.5rem;
+    }
+    .content h3{
+        font-size: 1rem;
+    }
 }

@@ -20,7 +20,7 @@
 
 @keyframes SlideInDown {
     from{
-        transform: translateY(-80px);
+        transform: translateY(-100px);
     }
     to{
         transform: translateY(0%);
@@ -76,41 +76,28 @@ body{
     background-color: black;
 }
 
-.logo{
-    height: 60px;
-    margin-right: 10vw;
-    user-select: none;
-}
-
 header{
     position: absolute;
     z-index: 99999;
     width: 100%;
-    padding: 0.2rem 0;
-    top: 0;
-    left: 0;
+    height: 7%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.02);
     display: flex;
-    height: 7%;
+    align-items: center;
+    justify-content: center;
 
     animation: SlideInDown 0.5s 1s backwards;
 }
 
-header nav{
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items:  center;
-    transform: translateX(-11vw);
-
+.logo{
+    height: 60px;
+    user-select: none;
 }
 
 header ul{
     display: flex;
     list-style: none;
-    align-items: center;
 }
 
 header ul a{
@@ -121,6 +108,7 @@ header ul a{
     font-weight: 400;
     font-size: 1.2rem;
     box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.56);
+
     transition: border-top-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
@@ -145,18 +133,22 @@ main{
     display: grid;
     width: 100%;
     height: 93%;
-    gap: 50px;
     z-index: 999;
     place-items: center;
+    text-align: center;
 }
 
 .frame{
     background-color: rgba(255, 255, 255, 0.13);
     width: 80%;
     height: 80%;
-    display: flex;
-    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
     border-radius: 10px;
+    gap: 10px;
+    padding: 10px;
+    margin: 40px;
 
     animation-name: SlideInUp;
     animation-duration: 1s;
@@ -171,37 +163,34 @@ main{
 .resume{
     display: grid;
     place-items: center;
-    place-content: center;
     color: white;
     font-size: 1.3rem;
     font-weight: 600;
-    gap: 10px;
 }
 
 .photo{
-    width: 150px;
+    width: 200px;
 }
 
 .content{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-right: 2%;
+    align-items: center;
 }
 
 .content h2{
     color: white;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 3rem;
     display: flex;
     justify-content: center;
+    padding: 2%;
 }
 
 .content h3{
     color: white;
     font-weight: 400;
     font-size: 1.2rem;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    padding: 1%;
+    text-align: justify;
 }
 
 .summary{
@@ -213,7 +202,7 @@ main{
 }
 
 .education_summary{
-grid-template-columns: 0.5fr 1.5fr 0.5fr 1fr 0.5fr 1.5fr;
+    grid-template-columns: 0.5fr 1.5fr 0.5fr 1fr 0.5fr 1.5fr;
 }
 
 .experiences_summary{
@@ -230,6 +219,7 @@ grid-template-columns: 0.5fr 1.5fr 0.5fr 1fr 0.5fr 1.5fr;
     font-style: italic;
     place-self: center;
     justify-self: start;
+    text-align: left;
 }
 
 
@@ -244,6 +234,7 @@ grid-template-columns: 0.5fr 1.5fr 0.5fr 1fr 0.5fr 1.5fr;
     pointer-events: none;
     transition: 0.45s cubic-bezier(.2, .49, .32, .99);
     user-select: none;
+    min-width: 1000px;
 }
 
 .Background{
@@ -471,14 +462,76 @@ h1{
 
 /* RESPONSIVE */
 
-@media (max-width: 1100px){
-    .text h1{
-        font-size: 8rem;
+@media (max-width: 1920px) {
+    .Background{
+        display: none;
     }
 }
 
-@media (max-width: 725px){
+@media (max-width: 1200px){
     .text h1{
-        font-size: 5rem;
+        font-size: 4rem;
+    }
+    header{
+        display: grid;
+        grid-template-rows: 1fr 1.8fr;
+        grid-template-columns: 1fr;
+        height: 9%;
+        place-items: center;
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+    .logo{
+        height: 35px;
+    }
+    .main_content{
+        height: 91%;
+    }
+    ul li a span{
+        display: none;
+    }
+    ul li a i{
+        font-size: 1.4rem;
+    }
+    ul li a{
+        padding: 0;
+
+    }
+    .navbar-menu{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+    .frame{
+        width: 90%;
+        height: 98%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        margin: 10px;
+    }
+    .content h2{
+        font-size: 2.5rem;
+    }
+    .content h3{
+        font-size: 1rem;
+    }
+    .education_summary{
+        grid-auto-flow: row;
+        grid-template-columns: 0.5fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .experiences_summary{
+        grid-auto-flow: row;
+        grid-template-columns: 0.5fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .projects_summary{
+        grid-auto-flow: row;
+        grid-template-columns: 0.5fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 }
