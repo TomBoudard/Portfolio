@@ -149,7 +149,7 @@ main{
     border-radius: 10px;
     gap: 10px;
     padding: 10px;
-    margin: 40px;
+    margin: 120px;
 
     animation-name: SlideInUp;
     animation-duration: 1s;
@@ -529,6 +529,7 @@ h1{
         height: 98%;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
+        margin: 40px;
     }
     .content h2{
         font-size: 2.5rem;
