@@ -474,17 +474,18 @@ h1{
     }
     header{
         display: grid;
-        grid-template-rows: 1fr 1.8fr;
+        grid-template-rows: 1fr 2.3fr;
         grid-template-columns: 1fr;
-        height: 9%;
+        height: 10vh;
+        min-height: max-content;
         place-items: center;
         background-color: rgba(255, 255, 255, 0.02);
     }
     .logo{
-        height: 35px;
+        height: 4vh;
     }
     .main_content{
-        height: 91%;
+        height: 90vh;
     }
     ul li a span{
         display: none;
